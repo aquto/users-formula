@@ -11,8 +11,11 @@ users:
     # WARNING: If 'empty_password' is set to True, the 'password' statement
     # will be ignored by enabling password-less login for the user.
     empty_password: False
+    hash_password: False
     system: False
     home: /custom/buser
+    homedir_owner: buser
+    homedir_group: primarygroup
     user_dir_mode: 750
     createhome: True
     roomnumber: "A-1"
@@ -42,6 +45,9 @@ users:
       gid: 500
     groups:
       - users
+    optional_groups:
+      - some_groups_that_might
+      - not_exist_on_all_minions
     ssh_key_type: rsa
     # You can inline the private keys ...
     ssh_keys:
